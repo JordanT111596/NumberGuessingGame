@@ -27,7 +27,11 @@ namespace NumberGuessingGame
                 if (int.TryParse(userGuess, out guessNum))
                 {
 
-                    if (guessNum > winNum)
+                    if (guessNum < 0)
+                    {
+                        Console.WriteLine("I said between 0 and 100! No negative numbers!");
+                    }
+                    else if (guessNum > winNum)
                     {
                         Console.WriteLine("Too high! Try a lower number!");
                     }
