@@ -31,6 +31,10 @@ namespace NumberGuessingGame
                     {
                         Console.WriteLine("I said between 0 and 100! No negative numbers!");
                     }
+                    else if (guessNum > 100)
+                    {
+                        Console.WriteLine("I said between 0 and 100! Don't guess higher than 100!");
+                    }
                     else if (guessNum > winNum)
                     {
                         Console.WriteLine("Too high! Try a lower number!");
@@ -47,7 +51,7 @@ namespace NumberGuessingGame
                 }
                 else
                 {
-                    Console.WriteLine("That's not a number! Try again!");
+                    Console.WriteLine("That's not an acceptable integer! Try again!");
                 }
 
                 Console.WriteLine();
