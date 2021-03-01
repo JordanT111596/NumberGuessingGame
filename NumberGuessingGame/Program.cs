@@ -20,22 +20,30 @@ namespace NumberGuessingGame
             {
                 Console.Write("Guess a number in between 0 and 100: ");
 
-                string s = Console.ReadLine();
+                string userGuess = Console.ReadLine();
 
-                int i = int.Parse(s);
+                int guessNum;
 
-                if (i > winNum)
+                if (int.TryParse(userGuess, out guessNum))
                 {
-                    Console.WriteLine("Too high! Try a lower number!");
+
+                    if (guessNum > winNum)
+                    {
+                        Console.WriteLine("Too high! Try a lower number!");
+                    }
+                    else if (guessNum < winNum)
+                    {
+                        Console.WriteLine("Too low! Try a higher number!");
+                    }
+                    else if (guessNum == winNum)
+                    {
+                        Console.WriteLine("That's right! YOU WIN!!!");
+                        win = true;
+                    }
                 }
-                else if (i < winNum)
+                else
                 {
-                    Console.WriteLine("Too low! Try a higher number!");
-                }
-                else if (i == winNum)
-                {
-                    Console.WriteLine("That's right! YOU WIN!!!");
-                    win = true;
+                    Console.WriteLine("That's not a number! Try again!");
                 }
 
                 Console.WriteLine();
